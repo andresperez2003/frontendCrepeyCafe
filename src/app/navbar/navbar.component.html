@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.84.0">
+  <title>Navbar Template · Bootstrap v5.0</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/navbars/">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+
+
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+  <main>
+
+    <nav class="navbar navbar-dark bg-dark  " aria-label="First navbar example"  >
+      <div class="container-fluid">
+        <h1 class="navbar-brand font">Crepe Y Cafe</h1>
+        <h1 class="navbar-brand font">Welcome {{this.name}}</h1>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01"
+          aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExample01">
+          <ul class="navbar-nav me-auto mb-2">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
+                aria-expanded="false">Pedidos</a>
+              <ul class="dropdown-menu bg-dark" aria-labelledby="dropdown01">
+                <li class="nav-item dropdown navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarsExample01"
+          aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation"><a class="dropdown-item text-light bg-dark" routerLink='/pedido/getPedidos'>Pedidos Realizados</a></li>
+              </ul>
+            </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
+              aria-expanded="false">Factura</a>
+            <ul class="dropdown-menu bg-dark" aria-labelledby="dropdown01">
+              <li class="nav-item dropdown navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarsExample01"
+          aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation"><a class="dropdown-item text-light bg-dark" routerLink="/factura/getFactura">Facturas Realizadas</a></li>
+            </ul>
+          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
+                aria-expanded="false">Usuarios</a>
+              <ul class="dropdown-menu bg-dark" aria-labelledby="dropdown01">
+                <li class="nav-item dropdown navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarsExample01"
+          aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation"><a class="dropdown-item text-light bg-dark" routerLink="/user/getUsers">Usuarios Creados</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
+                aria-expanded="false">Empleados</a>
+              <ul class="dropdown-menu bg-dark" aria-labelledby="dropdown01">
+                <li class="nav-item dropdown navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarsExample01"
+          aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation"><a class="dropdown-item text-light bg-dark" routerLink="/empleado/getEmpleado">Empleados Contratados</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
+                aria-expanded="false">Admin</a>
+              <ul class="dropdown-menu bg-dark" aria-labelledby="dropdown01">
+                <li class="nav-item dropdown navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarsExample01"
+          aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation"><a class="dropdown-item text-light bg-dark" routerLink="/admin/getAdmin">Administradores Actuales</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
+                aria-expanded="false">Rol</a>
+              <ul class="dropdown-menu bg-dark" aria-labelledby="dropdown01">
+                <li class="nav-item dropdown navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarsExample01"
+          aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation"><a class="dropdown-item text-light bg-dark" routerLink="/rol/getRols">Roles Disponibles</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
+                aria-expanded="false">Stock</a>
+              <ul class="dropdown-menu bg-dark" aria-labelledby="dropdown01">
+                <li class="nav-item dropdown navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarsExample01"
+          aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation"><a class="dropdown-item text-light bg-dark" routerLink="/stock/productos">Productos Disponibles</a></li>
+              </ul>
+            </li>
+              <li><a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Cliente</a>
+                <ul class="dropdown-menu bg-dark" aria-labelledby="dropdown01">
+                  <li class="nav-item dropdown navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarsExample01"
+          aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation"><a class="dropdown-item text-light bg-dark" routerLink="/cliente/getCliente">Clientes</a></li>
+                </ul>
+              </li>
+            <li class="nav-item dropdown navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarsExample01"
+          aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+              <a class="btn btn-danger" (click)="LogOut()" >Log out</a>
+            </li>
+          </ul>
+          <!-- <form>
+            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+          </form> -->
+        </div>
+      </div>
+    </nav>
+</main>
+</body>
+</html>

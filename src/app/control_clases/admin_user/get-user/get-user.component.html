@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="">
+</head>
+
+<body>
+  <div class="center">
+  <h1 class="text-center p-3 font">Usuarios Creados</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 p-4">
+        <table class="table table-hover  text-center  ">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Username </th>
+              <th scope="col">Rol</th>
+              <th scope="col">Activo</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users">
+              <th scope="row">{{user.name}}</th>
+              <td>{{user.username}}</td>
+              <td  >{{user.rol}}</td>
+              <td>{{user.active}}</td>
+              <td class="pe-0"> <button class=" btn-primary" routerLink="/user/editUser/{{user.id}}"> Editar </button></td>
+              <td class="ps-0"> <button class="btn-danger" (click)="deleteUserForm(user.id)"> Eliminar </button></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="col-4 p-4  ">
+          <button class="btn btn-primary" routerLink="/access/dashboard"> Volver</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>

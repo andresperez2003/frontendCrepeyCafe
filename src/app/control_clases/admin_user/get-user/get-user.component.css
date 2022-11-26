@@ -1,0 +1,13 @@
+body{
+  background-color: #FFF;
+  min-height: 88vh;
+}
+.font{
+    font-family: 'Pacifico', cursive;
+  font-size: 60px;
+  color: #000;
+}
+.center{
+  padding-top: 150px;
+}
+

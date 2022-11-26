@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="center">
+  <h1 class="text-center p-3 font">Productos Disponibles</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 p-4  ">
+<table class="table table-hover table- text-center">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Producto</th>
+      <th scope="col">Cantidad disponible </th>
+      <th scope="col">Precio Compra</th>
+      <th scope="col">Precio Venta</th>
+      <th scope="col"> </th>
+      <th scope="col"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let producto of productos">
+      <th scope="row">{{producto.id}}</th>
+      <td>{{producto.producto}}</td>
+      <td>{{producto.Cantidad_Disponible}}</td>
+      <td>${{producto.precioProductoCompra}}</td>
+      <td>${{producto.precioVentaUnidad}}</td>
+<td class="pe-0"> <button class=" btn-primary" routerLink="/stock/editProductos/{{producto.id}}"> Editar </button></td>
+<td class="ps-0"> <button class="btn-danger" (click)="deleteForm(producto.id)"> Eliminar </button></td>
+    </tr>
+  </tbody>
+</table>
+      </div>
+    </div>
+      <div class="col-1 me-3">
+    <button class="btn btn-primary" type="submit" routerLink="/access/dashboard">Volver</button>
+  </div>
+  </div>
+
+</div>
+  </body>
+
+</html>

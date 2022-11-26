@@ -1,0 +1,42 @@
+body{
+  min-height: 88vh;
+}
+.spacing_table1{
+margin: 5% 25% 0 10%;
+}
+.widthResposiveTable{
+font-weight: 500;
+width: 100px;
+}
+.producto{
+width: 45%;
+}
+.spaceButton{
+  margin: 18% 0 0 85% ;
+}
+@media screen and (max-width: 768px) {
+.spaceButton{
+  margin: 28% 0 0 85% ;
+}
+.producto{
+width: 40%;
+}
+}
+
+@media screen and (max-width: 480px) {
+.spaceButton{
+  margin: 30% 0 0 68% ;
+}
+.producto{
+width: 30%;
+}
+}
+
+@media screen and (max-width: 420px) {
+.spaceButton{
+  margin: 30% 0 0 55% ;
+}
+.producto{
+width: 10%;
+}
+}

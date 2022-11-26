@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+  <div class="center">
+  <h1 class="text-center p-3 font">Pedidos Realizado </h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 p-4">
+        <table class="table table-hover  text-center  ">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">Cantidad Producto</th>
+              <th scope="col">Producto</th>
+              <th scope="col">Cliente</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let pedido of pedidos">
+              <th scope="row">{{pedido.id}}</th>
+              <th scope="row">{{pedido.CantidadProducto}}</th>
+              <th scope="row">{{pedido.producto}}</th>
+              <th scope="row">{{pedido.name}}</th>
+                        <th class="pe-0"> <button class=" btn-primary" routerLink="/pedido/editPedido/{{pedido.id}}"> Editar </button></th>
+                        <th class="ps-0"> <button class="btn-danger" (click)="deletePedido(pedido.id)"> Eliminar </button></th>
+            </tr>
+          </tbody>
+        </table>
+<div class="col-4 p-4  ">
+  <button class="btn btn-primary" routerLink="/access/dashboard">Volver</button>
+</div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>

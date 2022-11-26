@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="">
+</head>
+
+<body>
+  <div class="center">
+  <h1 class="text-center p-3 font">Roles Disponibles</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 p-4">
+        <table class="table table-hover text-center  ">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">Rol</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let rol of rols">
+              <th scope="row">{{rol.id}}</th>
+              <th scope="row">{{rol.rol}}</th>
+<td class="pe-0"> <button class=" btn-primary" routerLink="/rol/editRol/{{rol.id}}"> Editar </button></td>
+<td class="ps-0"> <button class="btn-danger" (click)="deleteRol(rol.id)"> Eliminar </button></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="col-4 p-4  ">
+          <button class="btn btn-primary" routerLink="/access/dashboard"> Volver</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+</body>
+
+</html>

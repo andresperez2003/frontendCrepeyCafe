@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.84.0">
+  <title>Product example · Bootstrap v5.0</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/product/">
+  <link href="https://fonts.googleapis.com/css2?family=The+Nautigal:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+</head>
+<body>
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3" id="menu">
+    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-black overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-5">Productos</h2>
+      </div>
+      <div class="bg-dark shadow-sm mx-auto cls-background-products"
+        style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+        <button type="button" class="btn btn-sm btn-outline-secondary m-3" routerLink="/stock/createProductos">Crear</button>
+      <button type="button" class="btn btn-sm btn-outline-secondary m-3" routerLink="/stock/productos">Buscar</button>
+    </div>
+    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-black overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-5">Roles</h2>
+      </div>
+      <div class="bg-dark shadow-sm mx-auto cls-background-roles"
+        style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      <button type="button" class="btn btn-sm btn-outline-secondary m-3" routerLink="/rol/createRol">Crear</button>
+      <button type="button" class="btn btn-sm btn-outline-secondary m-3" routerLink="/rol/getRols">Buscar</button>
+    </div>
+  </div>
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3" id="menu">
+    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-black overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-5">Facturas</h2>
+      </div>
+      <div class="bg-dark shadow-sm mx-auto cls-background-factura"
+        style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      <button type="button" class="btn btn-sm btn-outline-secondary m-3" routerLink="/factura/createFactura">Crear</button>
+      <button type="button" class="btn btn-sm btn-outline-secondary m-3" routerLink="/factura/getFactura">Buscar</button>
+    </div>
+    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-black overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-5">Clientes</h2>
+      </div>
+      <div class="bg-dark shadow-sm mx-auto cls-background-cliente"
+        style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      <button type="button" class="btn btn-sm btn-outline-secondary m-3" routerLink="/cliente/createCliente">Crear</button>
+      <button type="button" class="btn btn-sm btn-outline-secondary m-3" routerLink="/cliente/getCliente">Buscar</button>
+    </div>
+  </div>
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3" id="menu">
+<div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-black overflow-hidden">
+  <div class="my-3 py-3">
+    <h2 class="display-5">Usuarios</h2>
+  </div>
+  <div class="bg-dark shadow-sm mx-auto cls-background-usuario"
+    style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+  <button type="button" class="btn btn-sm btn-outline-secondary m-3" routerLink="/user/createUser">Crear</button>
+  <button type="button" class="btn btn-sm btn-outline-secondary m-3" routerLink="/user/getUsers">Buscar</button>
+</div>
+    </div>
+    <script src="https://kit.fontawesome.com/4721981dfb.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
