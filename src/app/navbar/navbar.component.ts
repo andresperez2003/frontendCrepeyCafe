@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CrudService } from '../service/crud.service';
 import jwt_decode from 'jwt-decode';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-navbar',
@@ -12,9 +13,13 @@ export class NavbarComponent implements OnInit {
   constructor(
     private route: Router,
     private activeRoute: ActivatedRoute,
-    private api: CrudService
+    private api: CrudService,
+    private appComponent: AppComponent
   ) {}
- name:string='';
+
+  name: string = '';
+  activeNavBar: boolean = false;
+
   ngOnInit(): void {
     this.showName();
   }
@@ -33,6 +38,7 @@ export class NavbarComponent implements OnInit {
   }
   LogOut() {
     localStorage.clear();
+    this.appComponent.checkUser();
     return this.route.navigate(['access/login']);
   }
 }

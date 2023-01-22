@@ -20,6 +20,7 @@
     <tr>
       <th scope="col">id</th>
       <th scope="col">Producto</th>
+      <th scope="col">Categoria</th>
       <th scope="col">Cantidad disponible </th>
       <th scope="col">Precio Compra</th>
       <th scope="col">Precio Venta</th>
@@ -31,6 +32,7 @@
     <tr *ngFor="let producto of productos">
       <th scope="row">{{producto.id}}</th>
       <td>{{producto.producto}}</td>
+      <td>{{producto.categoria}}</td>
       <td>{{producto.Cantidad_Disponible}}</td>
       <td>${{producto.precioProductoCompra}}</td>
       <td>${{producto.precioVentaUnidad}}</td>

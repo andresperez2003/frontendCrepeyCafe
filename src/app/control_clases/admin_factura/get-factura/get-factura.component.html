@@ -53,9 +53,21 @@
                 <tr *ngFor="let factura of facturas">
                   <th scope="row">{{factura.name}}</th>
                   <th scope="row">{{factura.name_client}}</th>
-                  <td>{{factura.fechaFactura | date:'dd/MMM/yyy' }}</td>
+                  <th>{{factura.fechaFactura | date:'dd/MMM/yyy' }}</th>
                   <th>
-                       <div class="btn-group ">
+                    <div class="btn-group" role="group">
+                      <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Opciones
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1" >
+                        <li><a class="dropdown-item  "  routerLink="/pedido/createPedido/{{factura.id}}">Pedidos</a></li>
+                        <li><a class="dropdown-item"  routerLink="/factura/editFactura/{{factura.id}}">Editar</a></li>
+                        <li><a class="dropdown-item "  (click)="deleteFactura(factura.id)">Eliminar</a></li>
+                        <li><a class="dropdown-item "  routerLink="/factura/downloadFactura/{{factura.id}}">Visualizacion</a></li>
+                      </ul>
+                    </div>
+                     <!--   <div class="btn-group ">
                       <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         Opciones
@@ -72,7 +84,8 @@
                         <li><button class="btn-info" routerLink="/factura/downloadFactura/{{factura.id}}"> Visualizacion
                           </button></li>
                       </ul>
-                    </div>
+                    </div> -->
+                  </th>
                 </tr>
               </tbody>
             </table>

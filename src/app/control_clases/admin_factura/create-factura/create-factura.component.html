@@ -27,6 +27,7 @@
     </div>
     <form  [formGroup]="createFacturaForm" (ngSubmit)="newFactura(createFacturaForm.value)" id="contact_form">
       <div class="subject">
+       <label class="labelCliente">Seleccione un cliente</label>
         <select formControlName="id_cliente" required>
           <option selected disabled   >Cliente</option>
           <option *ngFor="let cliente of clientes" [value]="cliente.id">{{cliente.name_client}}</option>

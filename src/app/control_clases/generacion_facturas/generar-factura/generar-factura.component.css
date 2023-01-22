@@ -4,6 +4,9 @@ body{
 .spacing_table1{
 margin: 5% 25% 0 10%;
 }
+.widthUser{
+  width: 45%;
+}
 .widthResposiveTable{
 font-weight: 500;
 width: 100px;

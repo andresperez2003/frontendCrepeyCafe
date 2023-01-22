@@ -9,13 +9,16 @@ import jwt_decode from 'jwt-decode';
 })
 export class AppComponent implements OnInit {
   tittle = 'crepe-y-cafe';
-  value = false;
+  value:boolean = false;
+  activeNavBar:boolean = false;
   constructor(
     private activeRoute: ActivatedRoute,
     private api: CrudService,
     private router: Router
   ) {}
   ngOnInit(): void {
+    this.checkUser();
+
   }
   getDecodedAccessToken(token: string): any {
     try {
@@ -24,17 +27,30 @@ export class AppComponent implements OnInit {
       return null;
     }
   }
-  showId():boolean{
-    let token = localStorage.getItem('token') || '' ;
-    const tokenInfo = this.getDecodedAccessToken(token) || ''; // decode token
-   const activeValue = tokenInfo.active || false; // get token expiration dateTime
-   this.value = activeValue;
-   if (this.value == true) {
-    return true;
-   }
-   return false;
-  }
 
+  // Funcion que captura el tiempo de validacion de un token y depende de eso devuelve un dato booleano
+
+/*   showId(): boolean {
+    let token = localStorage.getItem('token') || '';
+    const tokenInfo = this.getDecodedAccessToken(token) || ''; // decode token
+    const activeValue = tokenInfo.active || false; // get token expiration dateTime
+    this.value = activeValue;
+    console.log (this.value);
+    if (this.value) {
+      return true;
+    }
+    return false;
+  } */
+  checkUser() {
+    let navBar = localStorage.getItem('token') || null;
+    if (navBar != null) {
+            this.activeNavBar = true;
+            this.router.navigate(['access/dashboard']);
+
+    } else {
+      this.activeNavBar = false;
+    }
+  }
 }
 
 

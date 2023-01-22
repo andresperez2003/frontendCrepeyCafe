@@ -1,3 +1,5 @@
+/*Optimizar todo el css*/
+
 body{
   background-color: #FFF;
   min-height: 88vh;
@@ -155,12 +157,6 @@ textarea:focus {
   float: left;
   width: 45%;
 }
-/*
-select {
-   background: url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-32.png")
-    no-repeat right;
-  outline: none;
-} */
 
 
 
@@ -219,6 +215,11 @@ textarea {
 #form_button:hover {
   background: #000;
   color: #f2f3eb;
+}
+
+.labelCliente{
+  margin-left: 85%;
+  width: 50%;
 }
 
 @media screen and (max-width: 768px) {
@@ -285,4 +286,9 @@ textarea {
   textarea {
     font-size: 0.875em;
   }
+  
+  .labelCliente{
+  margin-left: 80%;
+  width: 50%;
+}
 }

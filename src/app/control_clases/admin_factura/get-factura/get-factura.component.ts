@@ -27,12 +27,13 @@ export class GetFacturaComponent implements OnInit {
     id_cliente: new FormControl(null, Validators.required),
     fechaFactura: new FormControl(new Date(), Validators.required),
   });
-  public usuarios: Array<any> = [];
-  public clientes: Array<any> = [];
-  public facturas: Array<any> = [];
-  public fechas: Array<string> = [];
-  public pedidos: Array<any> = [];
-  public sumaTotal = 0;
+   usuarios: Array<any> = [];
+   clientes: Array<any> = [];
+   facturas: Array<any> = [];
+   fechas: Array<string> = [];
+   pedidos: Array<any> = [] ;
+   numPedidos: Array<any>= [];
+   sumaTotal = 0;
   suscription!: Subscription;
   constructor(
     private activeRouter: ActivatedRoute,
@@ -52,6 +53,7 @@ export class GetFacturaComponent implements OnInit {
   ngOnDestroy() {
     this.suscription.unsubscribe();
   }
+
   LoadData() {
     this.api.get('factura/relations').subscribe((respuesta: any) => {
       this.facturas = respuesta;
@@ -61,15 +63,26 @@ export class GetFacturaComponent implements OnInit {
       }
     });
   }
+
   deleteFactura(id: any) {
     try {
-      this.api.delete('factura', id).subscribe((data) => {
-        Swal.fire('Cuidado', 'Ha eliminado una factura', 'warning');
-      });
+       this.api.getById('pedido/relations', id).subscribe((data: any) => {
+        this.numPedidos = data;
+         if(this.numPedidos.length === 0) {
+           this.api.delete('factura', id).subscribe((data) => {
+           Swal.fire('Cuidado', 'Ha eliminado una factura', 'warning');
+        });
+        }else{
+          Swal.fire('Ops!', 'Primero elimine los pedidos asociados ', 'warning');
+        }
+
+      })
+
     } catch (error) {
       Swal.fire('Error', 'Ha sucedido un error: ' + error, 'error');
     }
   }
+
   LoadUser() {
     try {
       this.api.get('user').subscribe((data: any) => {
@@ -79,6 +92,7 @@ export class GetFacturaComponent implements OnInit {
       Swal.fire('Error', 'Ha sucedido un eror: ' + error, 'error');
     }
   }
+
   getClient() {
     try {
       this.api.get('cliente').subscribe((data: any) => {
@@ -88,6 +102,7 @@ export class GetFacturaComponent implements OnInit {
       Swal.fire('Error', 'Ha sucedido el error: ' + error, 'error');
     }
   }
+
   newFactura(form: factura) {
     try {
       this.api.post('factura', form).subscribe((data) => {
